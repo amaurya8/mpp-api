@@ -2,6 +2,7 @@ package com.aisa.mpp.api.mppapi;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -14,7 +15,8 @@ public class GroupInfoApiTest {
         RestAssured.baseURI = "http://localhost:8080";
     }
 
-    @Test
+    @Test()
+    @Order(1)
     public void testAddGroup() {
         String jsonPayload = "{\n" +
                 "  \"id\": 1,\n" +
@@ -38,6 +40,7 @@ public class GroupInfoApiTest {
     }
 
     @Test
+    @Order(2)
     public void testGetAllGroups() {
         given()
                 .when()
@@ -47,7 +50,8 @@ public class GroupInfoApiTest {
     }
 
     @Test
-    public void testGetGroupByName() {
+    @Order(3)
+    public void testGetGroupBy1Name() {
         given()
                 .param("grpName", "Study Group")
                 .when()
@@ -57,6 +61,7 @@ public class GroupInfoApiTest {
                 .body("id", equalTo(1));
     }
     @Test
+    @Order(4)
     public void testGetGroupById() {
         given()
                 .param("Id", "1")
