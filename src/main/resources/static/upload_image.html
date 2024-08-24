@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Product Image</title>
+</head>
+<body>
+<h2>Upload Product Image</h2>
+<form action="http://localhost:8080/api/images/upload" method="post" enctype="multipart/form-data">    <label for="imageName">Image Name:</label><br>
+    <input type="text" id="imageName" name="imageName" required><br><br>
+
+    <label for="imageFile">Choose Image:</label><br>
+    <input type="file" id="imageFile" name="imageFile" accept="image/*" required><br><br>
+
+    <input type="submit" value="Upload">
+</form>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Multiple Product Images</title>
+</head>
+<body>
+<h2>Upload Multiple Product Images</h2>
+<form action="http://localhost:8080/api/images/uploadMultiple" method="post" enctype="multipart/form-data">
+    <label for="imageFiles">Choose Images:</label><br>
+    <input type="file" id="imageFiles" name="files" accept="image/*" multiple required><br><br>
+
+    <input type="submit" value="Upload">
+</form>
+</body>
+</html>

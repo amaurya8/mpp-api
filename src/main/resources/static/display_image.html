@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Product Image</title>
+</head>
+<body>
+<h2>Product Image</h2>
+<img id="productImage" alt="Product Image" src="" width="400px"/>
+
+<script>
+        // Replace '1' with the actual ID of the image you want to display
+        var imageId = 1;
+        document.getElementById('productImage').src = 'http://localhost:8080/api/images/' + imageId;
+    </script>
+</body>
+</html>
