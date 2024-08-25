@@ -1,7 +1,7 @@
-package com.aisa.mpp.api.mppapi.controller;
+package com.aisa.mpp.api.mppapi.controller.group;
 
-import com.aisa.mpp.api.mppapi.model.GroupInfo;
-import com.aisa.mpp.api.mppapi.service.GroupInfoService;
+import com.aisa.mpp.api.mppapi.model.group.GroupInfo;
+import com.aisa.mpp.api.mppapi.service.group.GroupInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/api/groups")
 public class GroupInfoController {
 
-    @Autowired
+    @Autowired(required = false)
     private GroupInfoService groupInfoService;
 
     // Add a Group

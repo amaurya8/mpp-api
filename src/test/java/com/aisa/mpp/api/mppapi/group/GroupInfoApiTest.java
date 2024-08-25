@@ -1,4 +1,4 @@
-package com.aisa.mpp.api.mppapi;
+package com.aisa.mpp.api.mppapi.group;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;

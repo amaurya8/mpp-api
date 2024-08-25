@@ -1,4 +1,4 @@
-package com.aisa.mpp.api.mppapi.model;
+package com.aisa.mpp.api.mppapi.model.group;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

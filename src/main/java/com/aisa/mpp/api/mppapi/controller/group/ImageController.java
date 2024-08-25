@@ -1,4 +1,4 @@
-package com.aisa.mpp.api.mppapi.controller;
+package com.aisa.mpp.api.mppapi.controller.group;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.aisa.mpp.api.mppapi.model.ProductImage;
-import com.aisa.mpp.api.mppapi.repository.ProductImageRepository;
+import com.aisa.mpp.api.mppapi.model.group.ProductImage;
+import com.aisa.mpp.api.mppapi.repository.group.ProductImageRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;

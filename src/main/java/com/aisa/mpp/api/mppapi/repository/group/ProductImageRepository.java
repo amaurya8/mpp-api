@@ -1,7 +1,7 @@
-package com.aisa.mpp.api.mppapi.repository;
+package com.aisa.mpp.api.mppapi.repository.group;
 
 
-import com.aisa.mpp.api.mppapi.model.ProductImage;
+import com.aisa.mpp.api.mppapi.model.group.ProductImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

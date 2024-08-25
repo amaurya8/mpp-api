@@ -1,7 +1,7 @@
-package com.aisa.mpp.api.mppapi.service;
+package com.aisa.mpp.api.mppapi.service.group;
 
-import com.aisa.mpp.api.mppapi.model.GroupInfo;
-import com.aisa.mpp.api.mppapi.repository.GroupInfoRepository;
+import com.aisa.mpp.api.mppapi.model.group.GroupInfo;
+import com.aisa.mpp.api.mppapi.repository.group.GroupInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
