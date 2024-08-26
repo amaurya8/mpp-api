@@ -1,5 +1,6 @@
 package com.aisa.mpp.api.mppapi.controller.post;
 
+import com.aisa.mpp.api.mppapi.dto.post.PostResponse;
 import com.aisa.mpp.api.mppapi.model.post.Image;
 import com.aisa.mpp.api.mppapi.model.post.Post;
 import com.aisa.mpp.api.mppapi.repository.post.PostRepository;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -136,5 +138,11 @@ public class PostController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/groupPostsByCategory")
+    public ResponseEntity<Map<String, List<PostResponse>>> getAllPostsGroupedByCategory() {
+        Map<String, List<PostResponse>> groupedPosts = postService.getAllPostsGroupedByCategory();
+        return ResponseEntity.ok(groupedPosts);
     }
 }
