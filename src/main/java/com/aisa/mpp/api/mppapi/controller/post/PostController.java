@@ -1,5 +1,6 @@
 package com.aisa.mpp.api.mppapi.controller.post;
 
+import com.aisa.mpp.api.mppapi.dto.post.ExtendiblePostResponse;
 import com.aisa.mpp.api.mppapi.dto.post.PostResponse;
 import com.aisa.mpp.api.mppapi.model.post.Image;
 import com.aisa.mpp.api.mppapi.model.post.Post;
@@ -144,5 +145,11 @@ public class PostController {
     public ResponseEntity<Map<String, List<PostResponse>>> getAllPostsGroupedByCategory() {
         Map<String, List<PostResponse>> groupedPosts = postService.getAllPostsGroupedByCategory();
         return ResponseEntity.ok(groupedPosts);
+    }
+
+    @GetMapping("/groupPostsByCategoryExtendible")
+    public ResponseEntity<Map<String, ExtendiblePostResponse>> getAllPostsGroupedByCategoryExtendible() {
+        Map<String, ExtendiblePostResponse> postsByCategory = postService.getPostsGroupedByCategoryExtendible();
+        return ResponseEntity.ok(postsByCategory);
     }
 }

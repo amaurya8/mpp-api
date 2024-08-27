@@ -1,14 +1,13 @@
 package com.aisa.mpp.api.mppapi.service.post;
+import com.aisa.mpp.api.mppapi.dto.post.ExtendiblePostResponse;
+import com.aisa.mpp.api.mppapi.dto.post.PostDetail;
 import com.aisa.mpp.api.mppapi.dto.post.PostResponse;
 import com.aisa.mpp.api.mppapi.model.post.Post;
 import com.aisa.mpp.api.mppapi.repository.post.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -49,5 +48,26 @@ public class PostService {
                     return new PostResponse(post, base64Images);
                 })
                 .collect(Collectors.groupingBy(PostResponse::getCategory));
+    }
+    public Map<String, ExtendiblePostResponse> getPostsGroupedByCategoryExtendible() {
+        Map<String, ExtendiblePostResponse> response = new HashMap<>();
+
+        //Fetching all posts
+        List<Post> allPosts = postRepository.findAll();
+
+        // Grouping posts by category
+        for (Post post : allPosts) {
+            String category = post.getCategory();
+            String location = "IN"; // Set the location here, could be dynamic
+            PostDetail postDetail = new PostDetail(post,post.getBase64Images());
+            List postDetailList = new ArrayList<>();
+            postDetailList.add(postDetailList);
+            if (!response.containsKey(category)) {
+                response.put(category, new ExtendiblePostResponse(category, location,postDetailList ));
+            }
+            response.get(category).getPosts().add(postDetail);
+        }
+
+        return response;
     }
 }
