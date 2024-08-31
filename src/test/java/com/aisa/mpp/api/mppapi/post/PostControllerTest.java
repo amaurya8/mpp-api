@@ -14,7 +14,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -36,11 +35,11 @@ public class PostControllerTest {
     @Test
     public void testCreatePost() throws Exception {
 
-        Post post = new Post();
-        post.setPostId(1L);
-        post.setTitle("Test Post");
-        post.setDescription("Description");
-        post.setCategory("Electronics");
+//        Post post = new Post();
+//        post.setPostId(1L);
+//        post.setTitle("Test Post");
+//        post.setDescription("Description");
+//        post.setCategory("Electronics");
 
         given()
                 .contentType("multipart/form-data")

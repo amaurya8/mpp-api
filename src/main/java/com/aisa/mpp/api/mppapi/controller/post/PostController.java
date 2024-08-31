@@ -6,6 +6,7 @@ import com.aisa.mpp.api.mppapi.model.post.Image;
 import com.aisa.mpp.api.mppapi.model.post.Post;
 import com.aisa.mpp.api.mppapi.repository.post.PostRepository;
 import com.aisa.mpp.api.mppapi.service.post.PostService;
+import com.aisa.mpp.api.mppapi.service.post.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,18 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private  SearchService searchService;
+
+    public PostController( ) {
+    }
+
     public PostController(PostRepository postRepository) {
     }
+
+//    public PostController(SearchService searchService) {
+//        this.searchService = searchService;
+//    }
 
     // Create a Post with Images
     @PostMapping("/create")
@@ -151,5 +162,17 @@ public class PostController {
     public ResponseEntity<Map<String, ExtendiblePostResponse>> getAllPostsGroupedByCategoryExtendible() {
         Map<String, ExtendiblePostResponse> postsByCategory = postService.getPostsGroupedByCategoryExtendible();
         return ResponseEntity.ok(postsByCategory);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Post>> searchPosts(@RequestParam("query") String query) {
+        List<Post> posts = searchService.searchPosts(query);
+        return ResponseEntity.ok(posts);
+    }
+
+    @GetMapping("/searchPostsByCategory")
+    public ResponseEntity<Map<String, List<Post>>> searchPostsGroupByCategory(@RequestParam("query") String query) {
+        Map<String, List<Post>> postsGroupedByCategory = searchService.searchPostsGroupedByCategory(query);
+        return ResponseEntity.ok(postsGroupedByCategory);
     }
 }

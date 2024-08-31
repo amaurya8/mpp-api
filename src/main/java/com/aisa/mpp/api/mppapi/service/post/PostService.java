@@ -60,12 +60,13 @@ public class PostService {
             String category = post.getCategory();
             String location = "IN"; // Set the location here, could be dynamic
             PostDetail postDetail = new PostDetail(post,post.getBase64Images());
-            List postDetailList = new ArrayList<>();
-            postDetailList.add(postDetailList);
+            List <PostDetail> postDetailList = new ArrayList<>();
+            postDetailList.add(postDetail);
             if (!response.containsKey(category)) {
                 response.put(category, new ExtendiblePostResponse(category, location,postDetailList ));
             }
-            response.get(category).getPosts().add(postDetail);
+            else
+                response.get(category).getPosts().add(postDetail);
         }
 
         return response;
