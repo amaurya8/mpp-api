@@ -71,4 +71,7 @@ public class PostService {
 
         return response;
     }
+    public List<Post> searchPosts(String query) {
+        return postRepository.findByQuery(query);
+    }
 }
