@@ -71,7 +71,7 @@ public class PostService {
 
         return response;
     }
-    public List<Post> searchPosts(String query) {
-        return postRepository.findByQuery(query);
+    public Map<String, List<Post>> searchPosts(String query) {
+        return postRepository.findByQuery(query).stream().collect(Collectors.groupingBy(Post::getCategory));
     }
 }

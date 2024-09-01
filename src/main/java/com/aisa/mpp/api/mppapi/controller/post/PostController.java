@@ -178,7 +178,7 @@ public class PostController {
 
     @GetMapping("/searchPostsByCategoryQuerySearch")
     public ResponseEntity<Map<String, List<Post>>> searchPostsGroupByCategoryQuerySearch(@RequestParam("query") String query) {
-        Map<String, List<Post>> postsGroupedByCategory = searchService.searchPostsGroupedByCategory(query);
+        Map<String, List<Post>> postsGroupedByCategory = postService.searchPosts(query);
         return ResponseEntity.ok(postsGroupedByCategory);
     }
 }
